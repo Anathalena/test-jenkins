@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Print push info') {
             steps {
                 echo "${Name}"
                 echo "${message}"
