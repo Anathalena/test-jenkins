@@ -16,6 +16,7 @@ pipeline {
             }
         }
         stage('PR'){
+            when{
                 expression{
                     "$x_github_event" == "pull_request"
                 }            
