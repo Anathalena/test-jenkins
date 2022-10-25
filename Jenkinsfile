@@ -5,7 +5,7 @@ pipeline {
         stage('Print') {
             when{
                 expression{
-                    "$X_GitHub_Event" == "push"
+                    "$x_github_event" == "push"
                 }            
             }
             steps {
