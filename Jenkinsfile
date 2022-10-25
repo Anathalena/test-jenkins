@@ -27,5 +27,17 @@ pipeline {
                 build job: '/prDownstream'
             }
         }
+        stage('Issue comment'){
+            when{
+                expression{
+                    "$x_github_event" == "issue_comment"
+                }
+            }
+            steps{
+                echo "${Comment}"
+
+                build job: '/issuecommentDownstream'
+            }
+        }
     }
 }
