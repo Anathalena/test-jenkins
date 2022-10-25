@@ -6,6 +6,8 @@ pipeline {
             steps {
                 echo "${Name}"
                 echo "${message}"
+
+                build job: '/pushDownstream'
             }
         }
     }
