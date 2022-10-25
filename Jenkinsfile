@@ -16,7 +16,15 @@ pipeline {
             }
         }
         stage('PR'){
-            echo "blabla"
+                expression{
+                    "$x_github_event" == "pull_request"
+                }            
+            }
+            steps {
+                echo "${PRtitle}"
+
+                build job: '/prDownstream'
+            }
         }
     }
 }
