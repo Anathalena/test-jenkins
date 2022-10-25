@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Print') {
+        stage('Push') {
             when{
                 expression{
                     "$x_github_event" == "push"
@@ -14,6 +14,9 @@ pipeline {
 
                 build job: '/pushDownstream'
             }
+        }
+        stage('PR'){
+            echo "blabla"
         }
     }
 }
