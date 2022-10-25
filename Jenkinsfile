@@ -3,6 +3,11 @@ pipeline {
 
     stages {
         stage('Print') {
+            when{
+                expression{
+                    "${X-GitHub-Event}" == push
+                }            
+            }
             steps {
                 echo "${Name}"
                 echo "${message}"
