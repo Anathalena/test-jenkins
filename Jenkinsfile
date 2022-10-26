@@ -35,8 +35,8 @@ pipeline {
             }
             steps{
                 echo "${Comment}"
-                def text = "$Comment"
                 script{
+                    def text = "$Comment"
                     if(text =~ /!test/) {
                         echo "Radiii"
                         build job: '/issuecommentDownstream'
