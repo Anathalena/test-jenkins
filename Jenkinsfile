@@ -36,7 +36,14 @@ pipeline {
             steps{
                 echo "${Comment}"
 
-                build job: '/issuecommentDownstream'
+                script{
+                    //def text = toString(${Comment})
+                    if(${Comment} =~ /!test/) {
+                        echo "Radiii"
+                        build job: '/issuecommentDownstream'
+                    }    
+                }
+                
             }
         }
     }
