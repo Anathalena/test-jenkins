@@ -35,7 +35,7 @@ pipeline {
             }
             steps{
                 echo "${Comment}"
-                def text = toString(${Comment})
+                def text = "${Comment}"
                 script{
                     if(text =~ /!test/) {
                         echo "Radiii"
